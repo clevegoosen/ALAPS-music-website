@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ALAPS - African Music Journey</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="centered-container">
+    <header>
+      <h1 class="main-title">ALAPS</h1>
+      <p class="subtitle">African Hip-Hop, Rap & Reggae Journey</p>
+    </header>
+
+    <div class="auth-section" id="authContainer">
+      <form id="signupForm" class="auth-form" style="display: none;">
+        <h3>Sign Up</h3>
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Log In</a></p>
+      </form>
+
+      <form id="loginForm" class="auth-form">
+        <h3>Log In</h3>
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Log In</button>
+        <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+        <p>or</p>
+        <button type="button" onclick="continueAsGuest()">Continue as Guest</button>
+      </form>
+    </div>
+
+    <!-- Story/Quiz Section -->
+    <section class="story" id="storySection" style="display: none;">
+      <h2 id="storyTitle">Your African Music Quiz Begins!</h2>
+      <div id="questionContainer"></div>
+      <p id="score">Score: 0</p>
+      <button id="nextButton" onclick="nextQuestion()">Next</button>
+    </section>
+
+    <!-- Music Hub -->
+    <section class="story" id="musicHub" style="display: none;">
+      <h2>ALAPS Music Hub</h2>
+      <p>Upload and play tracks here!</p>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="song" accept="audio/*" required />
+        <input type="file" name="cover" accept="image/*" required />
+        <button type="submit">Upload</button>
+      </form>
+      <audio id="audio-player" controls></audio>
+      <ul id="song-list"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
